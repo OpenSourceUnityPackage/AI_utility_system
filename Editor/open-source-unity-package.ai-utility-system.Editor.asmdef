@@ -1,0 +1,10 @@
+{
+	"name": "open-source-unity-package.ai-utility-system.Editor",
+	"references": [
+		"open-source-unity-package.ai-utility-system"
+	],
+	"includePlatforms": [
+		"Editor"
+	],
+	"excludePlatforms": []
+}

@@ -1,0 +1,22 @@
+{
+  "name": "com.open-source-unity-package.ai-utility-system",
+  "displayName": "AI utility system",
+  "description": "",
+  "version": "1.0.3",
+  "unity": "2020.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSourceUnityPackage/AI_utility_system.git"
+  },
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "dependencies": {},
+  "keywords": [
+    "AI",
+    "Utility system"
+  ]
+}
