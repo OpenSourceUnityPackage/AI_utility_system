@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UtilitySystem : MonoBehaviour
 {
-    public List<NeedData> needDatas;
+    private List<NeedData> needDatas = new List<NeedData>();
 
     public void AddNeed(NeedData newNeedData)
     {
@@ -26,11 +26,11 @@ public class UtilitySystem : MonoBehaviour
         float priorityImportance = 0.0f;
         foreach (NeedData needData in needDatas)
         {
-            if (needData.range.Value > needData.floor)
+            if (needData.range.Value < needData.floor)
             {
-                float newImportance = priorityNeed.unitCurve.Evaluate(needData.range.Ratio());
+                float newImportance = needData.unitCurve.Evaluate(needData.range.Ratio());
 
-                if (newImportance > priorityImportance)
+                if (priorityNeed == null || newImportance > priorityImportance || (newImportance == priorityImportance && needData.priority > priorityNeed.priority))
                 {
                     priorityNeed = needData;
                     priorityImportance = newImportance;
