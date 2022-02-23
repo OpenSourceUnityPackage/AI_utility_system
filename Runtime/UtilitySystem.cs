@@ -6,6 +6,7 @@ using UnityEngine;
 public class UtilitySystem : MonoBehaviour
 {
     private List<NeedData> needDatas = new List<NeedData>();
+    public Action Idle;
 
     public void AddNeed(NeedData newNeedData)
     {
@@ -24,6 +25,7 @@ public class UtilitySystem : MonoBehaviour
     {
         NeedData priorityNeed = null;
         float priorityImportance = 0.0f;
+
         foreach (NeedData needData in needDatas)
         {
             if (needData.range.Value < needData.floor)
@@ -39,8 +41,8 @@ public class UtilitySystem : MonoBehaviour
         }
 
         if (priorityNeed != null)
-        {
             priorityNeed.action();
-        }
+        else if (Idle != null)
+            Idle();
     }
 }
